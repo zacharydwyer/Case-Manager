@@ -16,10 +16,9 @@ public class CaseCursorWrapper extends CursorWrapper {
 
         /* Get values from the cursor that was sent to us */
         int id = getInt(getColumnIndex(CaseTable.Cols.ID));                         // Get id of case
-        String firstName = getString(getColumnIndex(CaseTable.Cols.FIRST_NAME));    // Get first name
-        String lastName = getString(getColumnIndex(CaseTable.Cols.LAST_NAME));      // Get last name
+        String name = getString(getColumnIndex(CaseTable.Cols.NAME));    // Get name
 
         /* Create a new case from these values and return it */
-        return new Case(id, firstName, lastName);
+        return new Case(id, name);
     }
 }

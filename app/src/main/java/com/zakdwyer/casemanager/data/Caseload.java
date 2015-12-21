@@ -143,9 +143,8 @@ public class Caseload {
         // Used by ContentResolver.
         ContentValues values = new ContentValues();
 
-        // It only needs the first and last name information - the ID is created automatically.
-        values.put(CaseTable.Cols.FIRST_NAME, c.getFirstName());
-        values.put(CaseTable.Cols.LAST_NAME, c.getLastName());
+        // It only needs the name information - the ID is created automatically.
+        values.put(CaseTable.Cols.NAME, c.getName());
 
         return values;
     }

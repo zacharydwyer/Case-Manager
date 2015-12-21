@@ -18,22 +18,15 @@ import static com.zakdwyer.casemanager.database.CaseDbSchema.*;
 public class Case {
 
     private int mID;
-    private String mFirstName;
-    private String mLastName;
+    private String mName;
     private SQLiteDatabase mDatabase;
 
     // Constructor
-    public Case(int id, String firstName) {
-        this(id, firstName, "");
-    }
-
-    // More specific constructor
-    public Case(int id, String firstName, String lastName) {
+    public Case(int id, String name) {
 
         // Assign member variables.
         mID = id;
-        mFirstName = firstName;
-        mLastName = lastName;
+        mName = name;
 
         // Every time the Case is created, it gets the associated database.
         // This is so it can create todos and contacts.
@@ -49,20 +42,12 @@ public class Case {
         mID = ID;
     }
 
-    public String getFirstName() {
-        return mFirstName;
+    public String getName() {
+        return mName;
     }
 
-    public void setFirstName(String firstName) {
-        mFirstName = firstName;
-    }
-
-    public String getLastName() {
-        return mLastName;
-    }
-
-    public void setLastName(String lastName) {
-        mLastName = lastName;
+    public void setName(String name) {
+        mName = name;
     }
 
     /////////////////////////////

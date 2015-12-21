@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Case Manager</string>
+
+    <!-- Case Add -->
+    <string name="case_add.enter_name">Enter name on case:</string>
+
+
 </resources>

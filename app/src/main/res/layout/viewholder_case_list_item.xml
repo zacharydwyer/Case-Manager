@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:radius="1dp"
+    android:padding="3dp"
+    android:elevation="3dp"
+    android:layout_marginLeft="3dp"
+    android:layout_marginRight="3dp"
+    android:layout_marginTop="15dp"
+    style="?android:listSeparatorTextViewStyle">
+
+    <!-- Case name -->
+    <TextView
+        android:id="@+id/list_item_case_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_alignParentLeft="true"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceListItem"
+        tools:text="Example Case Name"/>
+
+    <!-- Delete Case button -->
+    <ImageButton
+        android:id="@+id/list_item_delete_case_button"
+        android:background="@android:color/transparent"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center_vertical"
+        android:src="@android:drawable/ic_delete"
+        android:layout_alignParentEnd="true" />
+
+    <!-- View Case Contacts button -->
+    <ImageButton
+        android:id="@+id/list_item_view_case_contacts_button"
+        android:background="@android:color/transparent"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center_vertical"
+        android:src="@android:drawable/ic_menu_my_calendar"
+        android:layout_toLeftOf="@id/list_item_delete_case_button" />
+
+    <!-- View To-dos button -->
+    <ImageButton
+        android:id="@+id/list_item_view_todos_button"
+        android:background="@android:color/transparent"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center_vertical"
+        android:src="@android:drawable/checkbox_on_background"
+        android:layout_toLeftOf="@id/list_item_view_case_contacts_button" />
+
+    <!-- Case Info button -->
+    <ImageButton
+        android:id="@+id/list_item_view_case_info_button"
+        android:background="@android:color/transparent"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center_vertical"
+        android:src="@android:drawable/ic_menu_info_details"
+        android:layout_toLeftOf="@id/list_item_view_todos_button"/>
+</RelativeLayout>

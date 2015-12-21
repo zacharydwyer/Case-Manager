@@ -28,12 +28,7 @@ public class CaseDbSchema {
             /**
              * Identifier for the case's first_name column.
              */
-            public static final String FIRST_NAME = "first_name";
-
-            /**
-             * Identifier for the case's last_name column.
-             */
-            public static final String LAST_NAME = "last_name";
+            public static final String NAME = "name";
         }
     }
 

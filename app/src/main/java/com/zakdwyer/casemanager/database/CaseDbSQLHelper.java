@@ -40,10 +40,9 @@ public class CaseDbSQLHelper extends SQLiteOpenHelper {
 
     private void createCaseTable(SQLiteDatabase db) {
         // Create the CASES table
-        db.execSQL("CREATE TABLE " + CaseTable.NAME + "(" +                             // Create table
+        db.execSQL("CREATE TABLE " + CaseTable.NAME + "(" +                                         // Create table
                         CaseTable.Cols.ID +  " integer PRIMARY KEY AUTOINCREMENT, " +               // ID is primary key, automatically increments each time another row in this table is created.
-                        CaseTable.Cols.FIRST_NAME + " text NOT NULL, " +                            // First name must not be left out.
-                        CaseTable.Cols.LAST_NAME + " text"
+                        CaseTable.Cols.NAME + " text"                                               // Name of case
         );
     }
 
