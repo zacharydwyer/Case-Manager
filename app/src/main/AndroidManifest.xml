@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_contact_3x"
+        android:icon="@drawable/ic_person"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
