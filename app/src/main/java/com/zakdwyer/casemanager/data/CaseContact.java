@@ -14,12 +14,12 @@ public class CaseContact {
     private long mDateAndTimeOfContact;
 
     // Constructor
-    public CaseContact(int id, int caseID, String title, String description, long dateAndTimeOfContact) {
+    public CaseContact(int id, int caseID, String title, String description) {      // long dateAndTimeOfContact
         this.mID = id;
         this.mCaseID = caseID;
         this.mTitle = title;
         this.mDescription = description;
-        this.mDateAndTimeOfContact = dateAndTimeOfContact;
+//        this.mDateAndTimeOfContact = dateAndTimeOfContact;
     }
 
     // Getters and Setters
@@ -47,11 +47,11 @@ public class CaseContact {
         mDescription = description;
     }
 
-    public long getDateAndTimeOfContact() {
-        return mDateAndTimeOfContact;
-    }
+//    public long getDateAndTimeOfContact() {
+//        return mDateAndTimeOfContact;
+//    }
 
-    public void setDateAndTimeOfContact(long dateAndTimeOfContact) {
-        mDateAndTimeOfContact = dateAndTimeOfContact;
-    }
+//    public void setDateAndTimeOfContact(long dateAndTimeOfContact) {
+//        mDateAndTimeOfContact = dateAndTimeOfContact;
+//    }
 }

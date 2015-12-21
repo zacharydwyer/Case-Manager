@@ -4,25 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/activity_horizontal_margin"
-    android:orientation="vertical">
+    android:orientation="horizontal">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/case_add.enter_name"
-        style="?android:attr/listSeparatorTextViewStyle"/>
+        android:text="@string/case_info.name"/>
 
+    <!-- Every time this is changed, update this case's name -->
     <EditText
-        android:id="@+id/case_add.edit_name_field"
+        android:id="@+id/case_info.name_field"
         android:layout_width="match_parent"
         android:singleLine="true"
+        android:selectAllOnFocus="true"
         android:maxLength="22"
         android:layout_height="wrap_content"/>
-
-    <Button
-        android:id="@+id/case_add.submit_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/submit"/>
 
 </LinearLayout>

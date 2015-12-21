@@ -1,6 +1,7 @@
 package com.zakdwyer.casemanager.data;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
@@ -22,7 +23,7 @@ public class Case {
     private SQLiteDatabase mDatabase;
 
     // Constructor
-    public Case(int id, String name) {
+    public Case(Context context, int id, String name) {
 
         // Assign member variables.
         mID = id;
@@ -30,7 +31,7 @@ public class Case {
 
         // Every time the Case is created, it gets the associated database.
         // This is so it can create todos and contacts.
-        mDatabase = Caseload.getCaseload().getDatabase();
+        mDatabase = Caseload.getCaseload(context).getDatabase();
     }
 
     // Getters and Setters
@@ -66,7 +67,13 @@ public class Case {
         ContentValues values = getContentValues(caseContact);       // Get content values out of case contact
 
         // Update the Case Contact row with the specified ID using the ContentValues we just got.
-        mDatabase.update(CaseTodoTable.NAME, values, CaseTable.Cols.ID + " = ?", new String[]{idString});
+        mDatabase.update(CaseContactTable.NAME, values, CaseContactTable.Cols.ID + " = ?", new String[]{idString});
+    }
+
+    // DELETE //
+    public void removeCaseContact(CaseContact contact) {
+        String id = Integer.toString(contact.getID());     // Get id of case contact
+        mDatabase.delete(CaseContactTable.NAME, CaseContactTable.Cols.ID + " = ?", new String[]{id}); // Remove it
     }
 
     // GET SINGLE CASE CONTACT //
@@ -140,7 +147,7 @@ public class Case {
 
         values.put(CaseContactTable.Cols.TITLE, caseContact.getTitle());
         values.put(CaseContactTable.Cols.DESCRIPTION, caseContact.getDescription());
-        values.put(CaseContactTable.Cols.DATE_AND_TIME_OCCURRED, caseContact.getDateAndTimeOfContact());
+//        values.put(CaseContactTable.Cols.DATE_AND_TIME_OCCURRED, caseContact.getDateAndTimeOfContact());
 
         return values;
     }
@@ -163,6 +170,12 @@ public class Case {
         ContentValues valuesForTodo = getContentValues(todo);   // Get content values for this to-do
 
         mDatabase.update(CaseTodoTable.NAME, valuesForTodo, CaseTable.Cols.ID + " = ?", new String[]{idString});
+    }
+
+    // DELETE //
+    public void removeCaseTodo(CaseTodo todo) {
+        String id = Integer.toString(todo.getID());     // Get id of to-do
+        mDatabase.delete(CaseTodoTable.NAME, CaseTodoTable.Cols.ID + " = ?", new String[]{id}); // Remove it
     }
 
     // GET ALL TODOS ASSOCIATED WITH THIS CASE //
@@ -210,6 +223,24 @@ public class Case {
         }
     }
 
+    // Get position of To-do in list
+    public int getPositionOfTodoInList(CaseTodo todo) {
+        List<CaseTodo> todos = this.getTodos();             // Get to-do list.
+        int idOfTodo = todo.getID();                        // Get ID of to-do.
+
+        int position = 0;
+
+        for (CaseTodo caseTodo : todos) {
+            if (caseTodo.getID() == todo.getID()) {
+                return position;
+            } else {
+                position++;
+            }
+            throw new RuntimeException("Couldn't find todo with that ID!");
+        }
+        return 0;
+    }
+
     // Used to insert/update a to-do
     private ContentValues getContentValues(CaseTodo todo) {
 
@@ -217,7 +248,6 @@ public class Case {
 
         // Use this case's ID as the foreign key.
         values.put(CaseTodoTable.Cols.FK_CASEID, this.getID());
-
         values.put(CaseTodoTable.Cols.DESCRIPTION, todo.getDescription());
         values.put(CaseTodoTable.Cols.IS_COMPLETE, todo.isComplete());
 
@@ -235,7 +265,7 @@ public class Case {
                 whereArgs,
                 null,
                 null,
-                null
+                CaseTodoTable.Cols.IS_COMPLETE + " ASC"
         );
 
         return new CaseTodoCursorWrapper(cursor);

@@ -1,5 +1,6 @@
 package com.zakdwyer.casemanager.database.wrapper;
 
+import android.content.Context;
 import android.database.Cursor;
 import android.database.CursorWrapper;
 
@@ -8,8 +9,13 @@ import com.zakdwyer.casemanager.data.Case;
 import static com.zakdwyer.casemanager.database.CaseDbSchema.*;
 
 public class CaseCursorWrapper extends CursorWrapper {
-    public CaseCursorWrapper(Cursor cursor) {
+
+    // Context
+    private Context mContext;
+
+    public CaseCursorWrapper(Context context, Cursor cursor) {
         super(cursor);
+        mContext = context;
     }
 
     public Case getCase() {
@@ -19,6 +25,6 @@ public class CaseCursorWrapper extends CursorWrapper {
         String name = getString(getColumnIndex(CaseTable.Cols.NAME));    // Get name
 
         /* Create a new case from these values and return it */
-        return new Case(id, name);
+        return new Case(mContext, id, name);
     }
 }

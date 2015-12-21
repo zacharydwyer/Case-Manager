@@ -24,9 +24,9 @@ public class CaseContactCursorWrapper extends CursorWrapper {
         int caseID = getInt(getColumnIndex(CaseContactTable.Cols.FK_CASEID));   // Associated Case ID
         String title = getString(getColumnIndex(CaseContactTable.Cols.TITLE));  // Title of Case Contact
         String description = getString(getColumnIndex(CaseContactTable.Cols.DESCRIPTION));  // Description
-        long dateAndTimeOfContact = getLong(getColumnIndex(CaseContactTable.Cols.DATE_AND_TIME_OCCURRED));
+//        long dateAndTimeOfContact = getLong(getColumnIndex(CaseContactTable.Cols.DATE_AND_TIME_OCCURRED));
 
         // Create and return a created Case Contact
-        return new CaseContact(id, caseID, title, description, dateAndTimeOfContact);
+        return new CaseContact(id, caseID, title, description); //date and time of contact
     }
 }

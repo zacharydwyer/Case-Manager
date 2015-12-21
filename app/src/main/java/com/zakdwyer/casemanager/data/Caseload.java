@@ -19,6 +19,9 @@ public class Caseload {
     // Reference to database that holds the caseload.
     private SQLiteDatabase mDatabase;
 
+    // Context
+    private static Context sContext;
+
     // Singleton instance of this class.
     private static Caseload sCaseload;
 
@@ -30,7 +33,14 @@ public class Caseload {
     }
 
     // Returns static single instance of Caseload.
-    public static Caseload getCaseload() {
+    public static Caseload getCaseload(Context context) {
+
+        // Assign context
+        sContext = context;
+
+        if(sCaseload == null) {
+            sCaseload = new Caseload(sContext);
+        }
         return sCaseload;
     }
 
@@ -156,7 +166,7 @@ public class Caseload {
         Cursor caseTableCursor = mDatabase.query(CaseTable.NAME, null, whereClause, whereArgs, null, null, null);
 
         // Return the special wrapper for the cursor that has the ability to get the case.
-        return new CaseCursorWrapper(caseTableCursor);
+        return new CaseCursorWrapper(sContext, caseTableCursor);
     }
 
 }

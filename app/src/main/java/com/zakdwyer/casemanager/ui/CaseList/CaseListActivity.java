@@ -1,10 +1,9 @@
-package com.zakdwyer.casemanager.ui.activity;
+package com.zakdwyer.casemanager.ui.CaseList;
 
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
 import com.zakdwyer.casemanager.R;
-import com.zakdwyer.casemanager.ui.fragment.CaseListFragment;
+import com.zakdwyer.casemanager.ui.ZZMisc.SingleFragmentActivity;
 
 // Activity for the list of cases.
 public class CaseListActivity extends SingleFragmentActivity {

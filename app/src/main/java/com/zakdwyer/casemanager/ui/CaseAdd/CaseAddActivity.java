@@ -1,8 +1,8 @@
-package com.zakdwyer.casemanager.ui.activity;
+package com.zakdwyer.casemanager.ui.CaseAdd;
 
 import android.support.v4.app.Fragment;
 
-import com.zakdwyer.casemanager.ui.fragment.CaseAddFragment;
+import com.zakdwyer.casemanager.ui.ZZMisc.SingleFragmentActivity;
 
 public class CaseAddActivity extends SingleFragmentActivity {
 

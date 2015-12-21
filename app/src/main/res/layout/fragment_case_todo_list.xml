@@ -7,14 +7,14 @@
     android:layout_height="match_parent">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/case_list.recycler_view"
+        android:id="@+id/case_todo_list.recycler_view"
         android:scaleType="fitXY"
         android:adjustViewBounds="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/case_list.add_case_fab"
+        android:id="@+id/case_todo_list.add_case_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@android:drawable/ic_input_add"

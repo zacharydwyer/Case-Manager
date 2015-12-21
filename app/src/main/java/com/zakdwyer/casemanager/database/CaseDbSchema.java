@@ -38,12 +38,12 @@ public class CaseDbSchema {
     public static final class CaseTodoTable {
 
         /**
-         * Name of the todo table ("todo")
+         * Name of the to-do table ("to-do")
          */
         public static final String NAME = "todo";
 
         /**
-         * Column names for the todo table
+         * Column names for the to-do table
          */
         public static final class Cols {
 
@@ -63,7 +63,7 @@ public class CaseDbSchema {
             public static final String DESCRIPTION = "description";
 
             /**
-             * Column name for the data that indicates whether this todo is complete or not.
+             * Column name for the data that indicates whether this to-do is complete or not.
              */
             public static final String IS_COMPLETE = "is_complete";
         }
@@ -104,10 +104,10 @@ public class CaseDbSchema {
              */
             public static final String DESCRIPTION = "description";
 
-            /**
-             * Column name: Date and time of when this contact occurred
-             */
-            public static final String DATE_AND_TIME_OCCURRED = "date_and_time_occurred";
+//            /**
+//             * Column name: Date and time of when this contact occurred
+//             */
+//            public static final String DATE_AND_TIME_OCCURRED = "date_and_time_occurred";
 
         }
     }

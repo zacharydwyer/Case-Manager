@@ -5,6 +5,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.zakdwyer.casemanager.data.CaseContact;
+
 import static com.zakdwyer.casemanager.database.CaseDbSchema.*;
 
 /**
@@ -42,7 +44,7 @@ public class CaseDbSQLHelper extends SQLiteOpenHelper {
         // Create the CASES table
         db.execSQL("CREATE TABLE " + CaseTable.NAME + "(" +                                         // Create table
                         CaseTable.Cols.ID +  " integer PRIMARY KEY AUTOINCREMENT, " +               // ID is primary key, automatically increments each time another row in this table is created.
-                        CaseTable.Cols.NAME + " text"                                               // Name of case
+                        CaseTable.Cols.NAME + " text)"                                               // Name of case
         );
     }
 
@@ -50,9 +52,10 @@ public class CaseDbSQLHelper extends SQLiteOpenHelper {
         // Create the TO-DO table
         db.execSQL("CREATE TABLE " + CaseTodoTable.NAME + "(" +
                 CaseTodoTable.Cols.ID + " integer PRIMARY KEY AUTOINCREMENT, " +
-                "FOREIGN KEY(" + CaseTodoTable.Cols.FK_CASEID + ") REFERENCES " + CaseTable.NAME + "(" + CaseTable.Cols.ID + ") NOT NULL, " +
-                CaseTodoTable.Cols.DESCRIPTION + "text NOT NULL, " +
-                CaseTodoTable.Cols.IS_COMPLETE + "integer NOT NULL");
+                CaseTodoTable.Cols.FK_CASEID + " integer NOT NULL, " +
+                CaseTodoTable.Cols.DESCRIPTION + " text NOT NULL, " +
+                CaseTodoTable.Cols.IS_COMPLETE + " integer NOT NULL, " +
+                "FOREIGN KEY(" + CaseTodoTable.Cols.FK_CASEID + ") REFERENCES " + CaseTable.NAME + "(" + CaseTable.Cols.ID + "))");
     }
 
     private void createContactTable(SQLiteDatabase db) {
@@ -64,10 +67,11 @@ public class CaseDbSQLHelper extends SQLiteOpenHelper {
 
         // Create columns
         createString.append(CaseContactTable.Cols.ID + " integer PRIMARY KEY AUTOINCREMENT, ");
-        createString.append("FOREIGN KEY(" + CaseContactTable.Cols.FK_CASEID + ") REFERENCES " + CaseTable.NAME + "(" + CaseTable.Cols.ID + ") NOT NULL, ");
+        createString.append(CaseContactTable.Cols.FK_CASEID + " integer NOT NULL, ");
         createString.append(CaseContactTable.Cols.TITLE + " text NOT NULL, ");
         createString.append(CaseContactTable.Cols.DESCRIPTION + " text NOT NULL, ");
-        createString.append(CaseContactTable.Cols.DATE_AND_TIME_OCCURRED + " integer NOT NULL");
+//        createString.append(CaseContactTable.Cols.DATE_AND_TIME_OCCURRED + " integer NOT NULL, ");
+        createString.append("FOREIGN KEY(" + CaseContactTable.Cols.FK_CASEID + ") REFERENCES " + CaseTable.NAME + "(" + CaseTable.Cols.ID + "))");
 
         // Execute SQL
         db.execSQL(createString.toString());

@@ -3,65 +3,86 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+    style="?android:listSeparatorTextViewStyle"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:radius="1dp"
-    android:padding="3dp"
-    android:elevation="3dp"
-    android:layout_marginLeft="3dp"
-    android:layout_marginRight="3dp"
-    android:layout_marginTop="15dp"
-    style="?android:listSeparatorTextViewStyle">
+    android:layout_marginTop="8dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:padding="8dp"
+    android:background="@color/colorListView"
+    android:elevation="3dp">
 
     <!-- Case name -->
     <TextView
-        android:id="@+id/list_item_case_name"
+        android:id="@+id/case_list_item.case_name_field"
+        android:background="@android:color/transparent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:layout_marginLeft="16dp"
         android:layout_alignParentLeft="true"
-        android:textStyle="bold"
+        android:singleLine="true"
+        android:maxLength="22"
         android:textAppearance="?android:attr/textAppearanceListItem"
-        tools:text="Example Case Name"/>
+        tools:text="Example Case Name Really Long Wow"/>
 
-    <!-- Delete Case button -->
-    <ImageButton
-        android:id="@+id/list_item_delete_case_button"
-        android:background="@android:color/transparent"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_gravity="center_vertical"
-        android:src="@android:drawable/ic_delete"
-        android:layout_alignParentEnd="true" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/case_list_item.case_name_field">
 
-    <!-- View Case Contacts button -->
-    <ImageButton
-        android:id="@+id/list_item_view_case_contacts_button"
-        android:background="@android:color/transparent"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_gravity="center_vertical"
-        android:src="@android:drawable/ic_menu_my_calendar"
-        android:layout_toLeftOf="@id/list_item_delete_case_button" />
+        <!-- Delete Case button -->
+        <ImageButton
+            android:layout_marginLeft="8dp"
+            android:id="@+id/list_item.delete_case_button"
+            android:background="@android:color/transparent"
+            android:layout_width="@dimen/case_list_item_button_size"
+            android:layout_height="@dimen/case_list_item_button_size"
+            android:layout_gravity="center_vertical"
+            android:paddingBottom="2dp"
+            android:src="@drawable/ic_delete_3x"
+            android:tint="@android:color/holo_red_light"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:adjustViewBounds="true"
+            android:cropToPadding="false"
+            android:scaleType="fitXY"
+            android:layout_alignParentRight="true" />
 
-    <!-- View To-dos button -->
-    <ImageButton
-        android:id="@+id/list_item_view_todos_button"
-        android:background="@android:color/transparent"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_gravity="center_vertical"
-        android:src="@android:drawable/checkbox_on_background"
-        android:layout_toLeftOf="@id/list_item_view_case_contacts_button" />
+        <!-- View Case Contacts button -->
+        <ImageButton
+            android:layout_marginLeft="8dp"
+            android:id="@+id/case_list_item.view_case_contacts_button"
+            android:background="@android:color/transparent"
+            android:layout_width="@dimen/case_list_item_button_size"
+            android:layout_height="@dimen/case_list_item_button_size"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_contact_3x"
+            android:tint="@android:color/holo_blue_light"
+            android:layout_centerHorizontal="true"
+            android:adjustViewBounds="true"
+            android:cropToPadding="false"
+            android:scaleType="fitXY"
+            android:layout_toLeftOf="@id/list_item.delete_case_button" />
 
-    <!-- Case Info button -->
-    <ImageButton
-        android:id="@+id/list_item_view_case_info_button"
-        android:background="@android:color/transparent"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_gravity="center_vertical"
-        android:src="@android:drawable/ic_menu_info_details"
-        android:layout_toLeftOf="@id/list_item_view_todos_button"/>
+        <!-- View To-dos button -->
+        <ImageButton
+            android:layout_marginLeft="8dp"
+            android:id="@+id/case_list_item.view_todos_button"
+            android:background="@android:color/transparent"
+            android:layout_width="@dimen/case_list_item_button_size"
+            android:layout_height="@dimen/case_list_item_button_size"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_check_3x"
+            android:tint="@android:color/holo_green_light"
+            android:layout_centerHorizontal="true"
+            android:adjustViewBounds="true"
+            android:cropToPadding="false"
+            android:scaleType="fitXY"
+            android:layout_toLeftOf="@id/case_list_item.view_case_contacts_button" />
+
+    </RelativeLayout>
+
+
 </RelativeLayout>

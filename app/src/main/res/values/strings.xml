@@ -1,8 +1,21 @@
 <resources>
     <string name="app_name">Case Manager</string>
 
+    <!-- General -->
+    <string name="submit">Submit</string>
+
     <!-- Case Add -->
     <string name="case_add.enter_name">Enter name on case:</string>
+
+    <!-- Case Info -->
+    <string name="case_info.name">Name:</string>
+
+    <!-- To-do Add -->
+    <string name="todo_add.name">Todo Description:</string>
+
+    <!-- Case Contact Edit -->
+    <string name="edit_case_contact.title_label">Title:</string>
+    <string name="edit_case_contact.description_label">Description:</string>
 
 
 </resources>

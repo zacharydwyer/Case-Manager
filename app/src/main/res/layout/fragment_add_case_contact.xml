@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/activity_horizontal_margin">
+
+    <LinearLayout
+        android:id="@+id/ignore_this.linear_layout_top_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/edit_case_contact.title_label"/>
+
+        <EditText
+            android:id="@+id/add_case_contact.title_field"
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            android:selectAllOnFocus="true"
+            android:maxLength="22"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ignore_this.linear_layout_middle_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/ignore_this.linear_layout_top_2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/edit_case_contact.description_label"/>
+
+        <EditText
+            android:id="@+id/add_case_contact.description_field"
+            android:layout_width="match_parent"
+            android:selectAllOnFocus="true"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</RelativeLayout>
