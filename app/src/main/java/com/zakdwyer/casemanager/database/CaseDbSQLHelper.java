@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.zakdwyer.casemanager.data.CaseContact;
+import com.zakdwyer.casemanager.data.Caseload;
 
 import static com.zakdwyer.casemanager.database.CaseDbSchema.*;
 
