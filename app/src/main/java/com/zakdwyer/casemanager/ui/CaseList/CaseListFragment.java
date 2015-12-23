@@ -102,7 +102,7 @@ public class CaseListFragment extends Fragment {
 
             // Wire up widgets
             mCaseName_TextView = (TextView) itemView.findViewById(R.id.case_list_item_case_name_field);
-            mDeleteCase_ImageButton = (ImageButton) itemView.findViewById(R.id.list_item_delete_case_button);
+            mDeleteCase_ImageButton = (ImageButton) itemView.findViewById(R.id.case_list_item_delete_case_button);
             mViewCaseContacts_ImageButton = (ImageButton) itemView.findViewById(R.id.case_list_item_view_case_contacts_button);
             mViewTodos_ImageButton = (ImageButton) itemView.findViewById(R.id.case_list_item_view_todos_button);
 

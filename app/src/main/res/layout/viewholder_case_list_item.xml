@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     style="?android:listSeparatorTextViewStyle"
@@ -9,80 +9,80 @@
     android:layout_marginTop="8dp"
     android:layout_marginLeft="8dp"
     android:layout_marginRight="8dp"
-    android:padding="8dp"
     android:background="@color/colorListView"
     android:elevation="3dp">
 
     <!-- Case name -->
     <TextView
         android:id="@+id/case_list_item.case_name_field"
+        android:layout_width="0dp"
+        android:layout_weight="3.01"
         android:background="@android:color/transparent"
-        android:layout_width="wrap_content"
+        android:layout_marginLeft="10dp"
+
         android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
         android:layout_centerInParent="true"
-        android:layout_marginLeft="16dp"
         android:layout_alignParentLeft="true"
         android:singleLine="true"
-        android:maxLength="22"
+
         android:textAppearance="?android:attr/textAppearanceListItem"
-        tools:text="Example Case Name Really Long Wow"/>
+        tools:text="WOWOWOWWOFOJASDOFJASDIOFASDIOFJDIOASJFIOSDJFASDFASDFASDFDASFAS"/>
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/case_list_item.case_name_field">
+        android:layout_width="0dp"
+        android:layout_weight="2.20"
+        android:layout_height="wrap_content">
 
         <!-- Delete Case button -->
         <ImageButton
-            android:layout_marginLeft="8dp"
-            android:id="@+id/list_item.delete_case_button"
-            android:background="@android:color/transparent"
+            android:id="@+id/case_list_item.delete_case_button"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/case_list_item_button_margins"
+            android:padding="8dp"
+            android:elevation="3dp"
+            android:background="@android:color/holo_red_light"
             android:layout_width="@dimen/case_list_item_button_size"
             android:layout_height="@dimen/case_list_item_button_size"
             android:layout_gravity="center_vertical"
             android:paddingBottom="2dp"
             android:src="@drawable/ic_delete_3x"
-            android:tint="@android:color/holo_red_light"
-            android:layout_centerHorizontal="true"
+            android:tint="@color/colorListView"
             android:layout_centerVertical="true"
-            android:adjustViewBounds="true"
-            android:cropToPadding="false"
-            android:scaleType="fitXY"
-            android:layout_alignParentRight="true" />
+            android:adjustViewBounds="false"
+            android:cropToPadding="true"
+            android:scaleType="centerInside"/>
 
-        <!-- View Case Contacts button -->
         <ImageButton
-            android:layout_marginLeft="8dp"
             android:id="@+id/case_list_item.view_case_contacts_button"
-            android:background="@android:color/transparent"
+            android:padding="8dp"
+            android:elevation="3dp"
+            android:layout_margin="@dimen/case_list_item_button_margins"
+            android:layout_toLeftOf="@id/case_list_item.delete_case_button"
+            android:background="@android:color/holo_blue_light"
             android:layout_width="@dimen/case_list_item_button_size"
             android:layout_height="@dimen/case_list_item_button_size"
             android:layout_gravity="center_vertical"
             android:src="@drawable/ic_contact_3x"
-            android:tint="@android:color/holo_blue_light"
-            android:layout_centerHorizontal="true"
-            android:adjustViewBounds="true"
-            android:cropToPadding="false"
-            android:scaleType="fitXY"
-            android:layout_toLeftOf="@id/list_item.delete_case_button" />
+            android:tint="@color/colorListView"
+            android:adjustViewBounds="false"
+            android:cropToPadding="true"
+            android:scaleType="centerInside" />
 
-        <!-- View To-dos button -->
         <ImageButton
-            android:layout_marginLeft="8dp"
             android:id="@+id/case_list_item.view_todos_button"
-            android:background="@android:color/transparent"
+            android:layout_margin="@dimen/case_list_item_button_margins"
+            android:elevation="3dp"
+            android:layout_toLeftOf="@id/case_list_item.view_case_contacts_button"
+            android:padding="5dp"
+            android:background="@android:color/holo_green_light"
             android:layout_width="@dimen/case_list_item_button_size"
             android:layout_height="@dimen/case_list_item_button_size"
             android:layout_gravity="center_vertical"
             android:src="@drawable/ic_check_3x"
-            android:tint="@android:color/holo_green_light"
-            android:layout_centerHorizontal="true"
-            android:adjustViewBounds="true"
-            android:cropToPadding="false"
-            android:scaleType="fitXY"
-            android:layout_toLeftOf="@id/case_list_item.view_case_contacts_button" />
-
+            android:tint="@color/colorListView"
+            android:adjustViewBounds="false"
+            android:cropToPadding="true"
+            android:scaleType="centerInside"/>
     </RelativeLayout>
-
-
-</RelativeLayout>
+</LinearLayout>
