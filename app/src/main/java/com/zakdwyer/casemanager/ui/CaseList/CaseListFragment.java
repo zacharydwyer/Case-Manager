@@ -21,6 +21,7 @@ import com.zakdwyer.casemanager.data.Caseload;
 import com.zakdwyer.casemanager.ui.CaseAdd.CaseAddActivity;
 import com.zakdwyer.casemanager.ui.CaseContactList.CaseContactListActivity;
 import com.zakdwyer.casemanager.ui.CaseInfo.CaseInfoActivity;
+import com.zakdwyer.casemanager.ui.CaseInfoPager.CaseInfoPagerActivity;
 import com.zakdwyer.casemanager.ui.TodoList.TodoListActivity;
 
 import java.util.List;
@@ -93,7 +94,7 @@ public class CaseListFragment extends Fragment {
         private ImageButton mViewCaseContacts_ImageButton;
         private ImageButton mViewTodos_ImageButton;
 
-        // Case this viewholder is working with.
+        // Case this viewholder is representing.
         private Case mCase;
 
         // Called by the Adapter to create a new ViewHolder - wires up widgets and handles button events.
@@ -195,6 +196,13 @@ public class CaseListFragment extends Fragment {
                     Intent intentToStartCaseInfo = CaseInfoActivity.newIntent(getActivity(), mCase.getID());
                     startActivity(intentToStartCaseInfo);
                     return true;
+                }
+            });
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(CaseInfoPagerActivity.newIntent(getContext(), mCase.getID()));
                 }
             });
         }

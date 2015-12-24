@@ -16,6 +16,9 @@
     <!-- Case Contact Edit -->
     <string name="edit_case_contact.title_label">Title:</string>
     <string name="edit_case_contact.description_label">Description:</string>
+    <string name="title_activity_case_info_pager">Case Info</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 
 
 </resources>

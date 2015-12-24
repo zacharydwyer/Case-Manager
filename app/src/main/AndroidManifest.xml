@@ -24,11 +24,26 @@
             android:name=".ui.CaseInfo.CaseInfoActivity"
             android:windowSoftInputMode="stateVisible">
         </activity>
-        <activity android:name=".ui.TodoList.TodoListActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".ui.TodoListAdd.TodoListAddActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".ui.CaseContactList.CaseContactListActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".ui.EditCaseContact.EditCaseContactActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".ui.AddCaseContact.AddCaseContactActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.TodoList.TodoListActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.TodoListAdd.TodoListAddActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.CaseContactList.CaseContactListActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.EditCaseContact.EditCaseContactActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.AddCaseContact.AddCaseContactActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.CaseInfoPager.CaseInfoPagerActivity"
+            android:label="@string/title_activity_case_info_pager"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

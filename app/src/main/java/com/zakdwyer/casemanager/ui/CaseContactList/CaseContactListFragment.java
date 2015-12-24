@@ -68,7 +68,6 @@ public class CaseContactListFragment extends Fragment {
 
         // Give RecyclerView its Layout Manager
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        getActivity().setTitle(mCase.getName() + "'s Case Contacts");
 
         mAddCaseContactActionButton.setOnClickListener(new View.OnClickListener() {
             @Override

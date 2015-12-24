@@ -78,7 +78,7 @@ public class Caseload {
             if (cursor.getCount() == 0) {
 
                 // Throw an exception - this program should only be trying to get cases with a specified ID!
-                throw new RuntimeException("At Caseload.java - tried to get a case with an ID that didn't return anything!");
+                throw new RuntimeException("At Caseload.java - no cases with that ID!");
             }
 
             // Cursor returned more than 1.

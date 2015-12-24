@@ -45,8 +45,6 @@ public class CaseInfoFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        getActivity().setTitle("Edit Case \"" + this.mCase.getName() + "\"");
-
         // Create view from layout.
         View view = inflater.inflate(R.layout.fragment_case_info, container, false);
 

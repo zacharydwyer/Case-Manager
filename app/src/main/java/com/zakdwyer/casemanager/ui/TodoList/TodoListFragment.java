@@ -65,7 +65,6 @@ public class TodoListFragment extends Fragment {
 
         // ASSIGN PROPERTIES
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        getActivity().setTitle(mCase.getName() + "'s Todo List");
 
         // ASSIGN LISTENERS
         mAddTodoActionButton.setOnClickListener(new View.OnClickListener() {
