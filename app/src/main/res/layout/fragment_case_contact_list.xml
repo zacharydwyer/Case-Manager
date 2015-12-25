@@ -12,6 +12,7 @@
         android:scaleType="fitXY"
         android:adjustViewBounds="true"
         android:paddingTop="8dp"
+        android:paddingBottom="100dp"
         android:clipToPadding="false"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

@@ -6,11 +6,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     tools:context="com.zakdwyer.casemanager.ui.CaseInfoPager.CaseInfoPagerActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/case_info_pager.appbar"
+        android:fitsSystemWindows="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/appbar_padding_top"
