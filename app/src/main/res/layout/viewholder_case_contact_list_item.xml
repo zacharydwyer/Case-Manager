@@ -1,54 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<TableLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    style="?android:listSeparatorTextViewStyle"
     android:layout_width="match_parent"
-    android:orientation="horizontal"
     android:layout_height="wrap_content"
     android:layout_marginTop="8dp"
     android:layout_marginLeft="8dp"
     android:layout_marginRight="8dp"
     android:padding="8dp"
-    android:background="@color/colorListView"
-    android:elevation="3dp">
+    android:background="@drawable/rounded_corners_background"
+    android:stretchColumns="0"
+    android:elevation="3dp"
+    style="?android:listSeparatorTextViewStyle">
 
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_weight="8.5"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/case_contact_list.title"
-            android:layout_width="wrap_content"
+    <TableRow>
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            tools:text="Example Case Contact Title"/>
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/case_contact_list.description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:maxLines="5"
-            android:ellipsize="end"
-            tools:text="Here is an example case contact. It might have a lot of text. Who knows. Here is some more text. I didn't know there'd be this much text. Wow. What if it goes past the lines allowed? Well I guess we'll just have to see. Keep typing and typing and typing example text example text"/>
+            <TextView
+                android:id="@+id/case_contact_list.title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                tools:text="Example Case Contact Title"/>
+            <TextView
+                android:id="@+id/case_contact_list.description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginBottom="8dp"
+                android:maxLines="5"
+                android:ellipsize="end"
+                tools:text="Here is an example case contact. It might have a lot of text. Who knows. Here is some more text. I didn't know there'd be this much text. Wow."/>
 
-    </LinearLayout>
+        </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/case_contact_list.delete_case_contact"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="@dimen/case_list_item_button_size"
-        android:layout_gravity="center_vertical"
-        android:src="@drawable/ic_delete_3x"
-        android:background="@android:color/transparent"
-        android:tint="@android:color/holo_red_light"
-        android:adjustViewBounds="true"
-        android:cropToPadding="false"
-        android:scaleType="fitCenter"/>
-
-</LinearLayout>
+        <ImageButton
+            android:id="@+id/case_contact_list.delete_case_contact"
+            android:src="@drawable/ic_delete_3x"
+            style="@style/delete_button"/>
+    </TableRow>
+</TableLayout>

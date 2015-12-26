@@ -91,8 +91,8 @@ public class CaseListFragment extends Fragment {
 
         private TextView mCaseName_TextView;
         private ImageButton mDeleteCase_ImageButton;
-        private ImageButton mViewCaseContacts_ImageButton;
-        private ImageButton mViewTodos_ImageButton;
+//        private ImageButton mViewCaseContacts_ImageButton;
+//        private ImageButton mViewTodos_ImageButton;
 
         // Case this viewholder is representing.
         private Case mCase;
@@ -104,24 +104,24 @@ public class CaseListFragment extends Fragment {
             // Wire up widgets
             mCaseName_TextView = (TextView) itemView.findViewById(R.id.case_list_item_case_name_field);
             mDeleteCase_ImageButton = (ImageButton) itemView.findViewById(R.id.case_list_item_delete_case_button);
-            mViewCaseContacts_ImageButton = (ImageButton) itemView.findViewById(R.id.case_list_item_view_case_contacts_button);
-            mViewTodos_ImageButton = (ImageButton) itemView.findViewById(R.id.case_list_item_view_todos_button);
+//            mViewCaseContacts_ImageButton = (ImageButton) itemView.findViewById(R.id.case_list_item_view_case_contacts_button);
+//            mViewTodos_ImageButton = (ImageButton) itemView.findViewById(R.id.case_list_item_view_todos_button);
 
-            mViewTodos_ImageButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intentToStartCaseTodoList = TodoListActivity.newIntent(getActivity(), mCase.getID());
-                    startActivity(intentToStartCaseTodoList);
-                }
-            });
-
-            mViewCaseContacts_ImageButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = CaseContactListActivity.newIntent(getActivity(), mCase.getID());
-                    startActivity(intent);
-                }
-            });
+//            mViewTodos_ImageButton.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    Intent intentToStartCaseTodoList = TodoListActivity.newIntent(getActivity(), mCase.getID());
+//                    startActivity(intentToStartCaseTodoList);
+//                }
+//            });
+//
+//            mViewCaseContacts_ImageButton.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    Intent intent = CaseContactListActivity.newIntent(getActivity(), mCase.getID());
+//                    startActivity(intent);
+//                }
+//            });
 
               // NOT IMPLEMENTED - CAUSED BUGS
 //            // Name field edited

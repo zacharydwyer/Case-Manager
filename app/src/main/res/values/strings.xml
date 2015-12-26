@@ -8,7 +8,9 @@
     <string name="case_add.enter_name">Enter name on case:</string>
 
     <!-- Case Info -->
-    <string name="case_info.name">Name:</string>
+    <string name="case_info.name">Name on case:</string>
+    <string name="case_info.toast.success">Case name updated.</string>
+    <string name="case_info.toast.failure">Case name must not be blank!</string>
 
     <!-- To-do Add -->
     <string name="todo_add.name">Todo Description:</string>

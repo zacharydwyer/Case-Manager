@@ -1,51 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<TableLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    style="?android:listSeparatorTextViewStyle"
     android:layout_width="match_parent"
-    android:orientation="horizontal"
     android:layout_height="wrap_content"
     android:layout_marginTop="8dp"
     android:layout_marginLeft="8dp"
     android:layout_marginRight="8dp"
     android:padding="8dp"
-    android:background="@color/colorListView"
-    android:elevation="3dp">
+    android:stretchColumns="1"
+    android:elevation="3dp"
+    android:background="@drawable/rounded_corners_background"
+    style="?android:listSeparatorTextViewStyle">
 
-    <CheckBox
-        android:id="@+id/case_todo_list_item.is_complete_checkbox"
-        android:layout_gravity="center_vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"/>
+    <TableRow>
+        <CheckBox
+            android:id="@+id/case_todo_list_item.is_complete_checkbox"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
-    <TextView
-        android:id="@+id/case_todo_list_item.todo_name_textview"
-        android:layout_gravity="center_vertical"
-        android:background="@android:color/transparent"
-        android:layout_width="275dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginBottom="6dp"
-        android:singleLine="false"
-        android:textAppearance="?android:attr/textAppearanceListItem"
-        android:layout_toRightOf="@id/case_todo_list_item.is_complete_checkbox"
-        tools:text="Example Case Name Really Long Wow hey try this how long will this be, wow that's al ong gggg text"/>
+        <TextView
+            android:id="@+id/case_todo_list_item.todo_name_textview"
+            android:layout_gravity="center_vertical"
+            android:background="@android:color/transparent"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:singleLine="false"
+            android:textAppearance="?android:attr/textAppearanceListItem"
+            tools:text="Example to-do that is very long in length. This tests the layout's ability to wrap the words properly and still show elements correctly. Technically, this could go on as long as it wanted to because to-dos don't have a character limit and this element does not specified maxLines."/>
 
-    <ImageButton
-        android:id="@+id/case_todo_list_item.delete_todo_imagebutton"
-        android:layout_width="@dimen/case_list_item_button_size"
-        android:layout_height="@dimen/case_list_item_button_size"
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:background="@android:color/transparent"
-        android:adjustViewBounds="true"
-        android:cropToPadding="false"
-        android:scaleType="fitXY"
-        android:src="@drawable/ic_delete_3x"
-        android:tint="@color/colorListViewBackground"/>
+        <ImageButton
+            android:id="@+id/case_todo_list_item.delete_todo_imagebutton"
+            android:src="@drawable/ic_delete_3x"
+            style="@style/delete_button"/>
+    </TableRow>
 
-</RelativeLayout>
+</TableLayout>

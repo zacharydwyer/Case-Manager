@@ -30,7 +30,6 @@ public class TodoListFragment extends Fragment {
     private static final String ARG_CASE_ID = "case_id";
 
     private RecyclerView mRecyclerView;
-    private FloatingActionButton mAddTodoActionButton;
     private CaseTodoListAdapter mCaseTodoListAdapter;
 
     public static TodoListFragment newInstance(int caseID) {
@@ -61,19 +60,9 @@ public class TodoListFragment extends Fragment {
 
         // WIRE UP WIDGETS
         mRecyclerView = (RecyclerView) viewFromLayout.findViewById(R.id.case_todo_list_recycler_view);
-        mAddTodoActionButton = (FloatingActionButton) viewFromLayout.findViewById(R.id.case_todo_list_add_case_fab);
 
         // ASSIGN PROPERTIES
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-
-        // ASSIGN LISTENERS
-        mAddTodoActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intentToStartTodoListAdd = TodoListAddActivity.newIntent(getContext(), mCase.getID());
-                startActivity(intentToStartTodoListAdd);
-            }
-        });
 
         // MAKE ADAPTER UPDATE
         updateAdapter();

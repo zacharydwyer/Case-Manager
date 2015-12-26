@@ -18,6 +18,7 @@
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/case_info_pager.toolbar"
+            app:layout_scrollFlags="scroll|enterAlways|snap"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
@@ -37,5 +38,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/case_info_pager.fab"
+        app:layout_anchor="@id/case_info_pager.fragment_container"
+        app:layout_anchorGravity="bottom|right|end"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:src="@android:drawable/ic_input_add"
+        android:tint="@color/colorListView"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        app:fabSize="normal" />
 
 </android.support.design.widget.CoordinatorLayout>

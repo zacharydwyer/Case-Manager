@@ -25,13 +25,21 @@ import com.zakdwyer.casemanager.ui.EditCaseContact.EditCaseContactActivity;
 
 import java.util.List;
 
+/*
+ * HUGE NOTE: This case contact list can no longer take care of adding case contacts by itself. It has
+ * had its Floating Action Button (FAB) that added Case Contacts ripped out from it in favor of using CaseInfoPagerActivity's
+ * implementation.
+ *
+ * This is because the + button was "push down" beneath the Android navigation bar due to how the
+ * tabbed Activity draws the bottom of the fragment container (and the FAB) underneath the Android
+ * navigation bar, it needed to be drawn instead SEPARATELY inside of the containing Activity.
+ */
 public class CaseContactListFragment extends Fragment {
 
     private Case mCase;     // Case this Fragment has access to.
     private static final String ARG_CASE_ID = "case_id";
 
     private RecyclerView mRecyclerView;
-    private FloatingActionButton mAddCaseContactActionButton;
     private CaseContactListAdapter mCaseContactListAdapter;
 
     public static CaseContactListFragment newInstance(int caseID) {
@@ -63,19 +71,8 @@ public class CaseContactListFragment extends Fragment {
         // Obtain recycler view
         mRecyclerView = (RecyclerView) view.findViewById(R.id.case_contact_list_recycler_view);
 
-        // Obtain FAB that adds a case
-        mAddCaseContactActionButton = (FloatingActionButton) view.findViewById(R.id.case_contact_list_add_case_fab);
-
         // Give RecyclerView its Layout Manager
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-
-        mAddCaseContactActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = AddCaseContactActivity.newIntent(getContext(), mCase.getID());
-                startActivity(intent);
-            }
-        });
 
         // Make adapter populate itself
         updateAdapter();

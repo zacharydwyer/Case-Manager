@@ -21,8 +21,7 @@
         </activity>
         <activity android:name=".ui.CaseAdd.CaseAddActivity"/>
         <activity
-            android:name=".ui.CaseInfo.CaseInfoActivity"
-            android:windowSoftInputMode="stateVisible">
+            android:name=".ui.CaseInfo.CaseInfoActivity">
         </activity>
         <activity
             android:name=".ui.TodoList.TodoListActivity"
@@ -41,7 +40,7 @@
             android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.CaseInfoPager.CaseInfoPagerActivity"
-            android:label="@string/title_activity_case_info_pager"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
